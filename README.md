@@ -4,15 +4,11 @@
   </a>
 </p>
 
-
-  <p align="center">
-    A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.
-  </p>
-
-
 ## Express.js with prisma
 
 [Express](https://github.com/expressjs/express) framework TypeScript starter repository. Prisma ORM and RESTful API.
+
+### Node Version - v20.11.1
 
 ## Installation
 
