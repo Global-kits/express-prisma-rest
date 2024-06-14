@@ -1,11 +1,7 @@
-import express from 'express';
+import 'dotenv/config';
+import config from './config';
+import app from './app';
 
-const app = express();
-
-app.get("/", (req, res) => {
-    return res.json("hi")
-})
-
-app.listen(3000, () => {
-    console.log("start app")
+app.listen( 8000, () => {
+    console.log(`SERVER RUNNING ON - ${process.env.APP_URL+':'+ config.port}`)
 })
