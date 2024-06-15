@@ -25,9 +25,17 @@ $ npm install
 .env
 
 ```bash
-$ cp .env .env.example
+$ cp .env.example .env 
 ```
 After that you have to fill env requirements.
+
+## Migrate
+
+prisma
+
+```bash
+$ npx prisma migrate dev
+```
 
 ## Run development
 
