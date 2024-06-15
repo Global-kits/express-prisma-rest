@@ -1,14 +1,12 @@
-import handlebars from 'handlebars';
-import * as fs from 'fs';
-import * as path from 'path';
-import { createTransport, Transporter } from 'nodemailer';
+import handlebars from "handlebars";
+import * as fs from "fs";
+import * as path from "path";
+import { createTransport, Transporter } from "nodemailer";
 
 class Mail {
-
   private transporter: Transporter;
 
   constructor() {
-
     this.transporter = createTransport({
       host: process.env.MAIL_HOST,
       service: process.env.MAIL_SERVICE,
@@ -19,26 +17,25 @@ class Mail {
         pass: process.env.MAIL_PASS,
       },
     });
-
   }
 
-  /** 
+  /**
    * Send mail service
-   * 
+   *
    */
   async sendEmail(
     to: string,
     subject: string,
     templateVariables: object,
-    templateName: string = 'mail',
+    templateName: string = "mail",
   ): Promise<void> {
     /** file path */
     const templatePath = path.join(
-      __dirname + '/templates/' + templateName + '.hbs',
+      __dirname + "/templates/" + templateName + ".hbs",
     );
 
     /** compile hbs */
-    const template = handlebars.compile(fs.readFileSync(templatePath, 'utf8'));
+    const template = handlebars.compile(fs.readFileSync(templatePath, "utf8"));
     const html = template(templateVariables);
 
     /** mail options */
@@ -57,6 +54,5 @@ class Mail {
     }
   }
 }
-
 
 export default Mail;
