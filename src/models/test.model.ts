@@ -14,7 +14,7 @@ export class TestModel {
       return result;
     } catch (error) {
       let err = error as Error;
-      throw new Error(error.message);
+      throw new Error(err.message);
     }
   }
 
@@ -22,7 +22,7 @@ export class TestModel {
     try {
     } catch (error) {
       let err = error as Error;
-      throw new Error(error.message);
+      throw new Error(err.message);
     }
   }
 
@@ -30,7 +30,7 @@ export class TestModel {
     try {
     } catch (error) {
       let err = error as Error;
-      throw new Error(error.message);
+      throw new Error(err.message);
     }
   }
 
@@ -40,7 +40,7 @@ export class TestModel {
       return result;
     } catch (error) {
       let err = error as Error;
-      throw new Error(error.message);
+      throw new Error(err.message);
     }
   }
 }

@@ -11,7 +11,7 @@ export class TestService {
       return await this.model.getAllTest();
     } catch (error) {
       let err = error as Error;
-      throw new Error(error.message);
+      throw new Error(err.message);
     }
   }
 }

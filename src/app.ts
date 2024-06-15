@@ -1,8 +1,9 @@
 import express from "express";
 import routes from "./routes";
+import helmet from "helmet";
 
 const app = express();
-const router = express.Router();
+app.use(helmet());
 
 routes(app);
 app.get("/", (req, res) => {

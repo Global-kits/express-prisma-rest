@@ -39,14 +39,6 @@ Seed your prisma - [Seed](https://www.prisma.io/docs/orm/prisma)
 }
 ```
 
-Node.js version - 20
-
-```bash
-"prisma": {
-    "seed": "node --loader ts-node/esm  --no-warnings=ExperimentalWarning prisma/seed.ts"
-  },
-```
-
 #### Seed.ts
 
 ```ts
@@ -80,6 +72,8 @@ main()
 ```
 
 #### CLI
+
+> **_NOTE:_** When we migrate, it automatically use this command. IF prisma seed script in package.json.
 
 ```bash
 npx prisma db seed
