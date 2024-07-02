@@ -4,14 +4,12 @@ async function main() {
   const alice = await prisma.test.create({
     data: {
       name: "hello",
-      email: "hello@one.com",
       description: "lorem Ipsum",
     },
   });
   const bi = await prisma.test.create({
     data: {
       name: "bi",
-      email: "bi@one.com",
       description: "Testing one two",
     },
   });

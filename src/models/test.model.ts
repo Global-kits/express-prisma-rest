@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import prisma from "../config/prisma";
-import { CreateTest } from "../types";
+import { createTest } from "../interfaces/repository";
 
 export class TestModel {
   protected prisma: PrismaClient;
@@ -8,7 +8,7 @@ export class TestModel {
     this.prisma = prisma;
   }
 
-  async createTest(data: CreateTest) {
+  async createTest(data: createTest) {
     try {
       let result = await this.prisma.test.create({ data });
       return result;
@@ -35,6 +35,16 @@ export class TestModel {
   }
 
   async getAllTest() {
+    try {
+      let result = await this.prisma.test.findMany();
+      return result;
+    } catch (error) {
+      let err = error as Error;
+      throw new Error(err.message);
+    }
+  }
+
+  async get() {
     try {
       let result = await this.prisma.test.findMany();
       return result;
